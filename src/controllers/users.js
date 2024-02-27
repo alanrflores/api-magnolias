@@ -22,7 +22,7 @@ const sendPasswordResetEmail = async (email, token) => {
   
 
 const urlBase = "http://localhost:3001";
-const URL_BASE_PROD = "https://magnolias-api.vercel.app"
+const URL_BASE_PROD = "https://client-magnolias.vercel.app"
 const resetLink = `${URL_BASE_PROD}/request/${token}`;
   const { data, error } = await resend.emails.send({
     from: "Magnolias admin <admin@resend.dev>",
