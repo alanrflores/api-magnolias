@@ -1,6 +1,5 @@
 const express = require("express");
 const session = require("express-session");
-const MongoStore = require("connect-mongo");
 const cors = require("cors");
 const flash = require("connect-flash");
 const bodyParser = require("body-parser");
@@ -28,12 +27,7 @@ server.set("trust proxy", 1); // trust first proxy
 
 const isProduction = process.env.ENVIRONMENT === "production";
 
-server.use(
-  session({
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URL_SESSIONS,
-      collectionName: "sessions", // Opcional: el nombre de la colección donde se almacenarán las sesiones
-    }),
+server.use(session({
     secret: "keyboard cat",
     resave: true,
     saveUninitialized: true,
