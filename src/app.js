@@ -19,7 +19,7 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 server.use(
   cors({
-    origin: "*",
+    origin: "https://client-magnolias.vercel.app",
     credentials: true,
   })
 );
