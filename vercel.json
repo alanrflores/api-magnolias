@@ -1,9 +1,11 @@
+
+
 {
-  "version": 2,
+  "version":  2,
   "builds": [
     {
       "src": "index.js",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -11,5 +13,8 @@
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ]
+  ],
+  "env": {
+    "DB_MONGOOSE_URI": "mongodb+srv://alanflores640:JtO7V1Hoi3YefvP4@mymongodb.bizvpvz.mongodb.net/mymongodb?retryWrites=true&w=majority"
+  }
 }
