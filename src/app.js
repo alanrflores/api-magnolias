@@ -2,13 +2,14 @@ const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
 const flash = require("connect-flash");
+require("dotenv").config();
+
 const bodyParser = require("body-parser");
 
 const routes = require("./routes/index.js");
 const passport = require("./middlewares/passport.middleware.js");
 
 const server = express();
-require("dotenv").config();
 
 server.name = "API";
 
